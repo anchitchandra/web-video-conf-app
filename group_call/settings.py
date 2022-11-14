@@ -139,7 +139,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = "/static/"
+# STATIC_URL = "/static/"
+# Static asset configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
 
 # ADDED CUSTOM CONFIGURATION
 STATICFILES_DIRS = [BASE_DIR / "frontend/build/static"]
