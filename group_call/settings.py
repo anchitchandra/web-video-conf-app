@@ -179,3 +179,7 @@ if DEBUG:
 else:
     channel_layer = {}
 CHANNEL_LAYERS = {"default": channel_layer}
+
+import django_on_heroku
+
+django_on_heroku.settings(locals())
