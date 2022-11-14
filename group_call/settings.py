@@ -176,7 +176,7 @@ ASGI_APPLICATION = "group_call.asgi.application"
 if DEBUG:
     channel_layer =  {"BACKEND": "channels.layers.InMemoryChannelLayer"}
 else:
-    channel_layer = {}
+    channel_layer = {"BACKEND": "channels.layers.InMemoryChannelLayer"}
 CHANNEL_LAYERS = {"default": channel_layer}
 
 import django_on_heroku
