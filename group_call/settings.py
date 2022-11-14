@@ -141,12 +141,11 @@ USE_TZ = True
 
 # STATIC_URL = "/static/"
 # Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
 # ADDED CUSTOM CONFIGURATION
-STATICFILES_DIRS = [BASE_DIR + "/" +"frontend/build/static"]
+STATICFILES_DIRS = [BASE_DIR / "frontend/build/static"]
+
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
