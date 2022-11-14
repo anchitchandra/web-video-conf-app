@@ -32,8 +32,8 @@ SECRET_KEY = "gggg6666655444322"
 
 
 
-if DEBUG:
-    ALLOWED_HOSTS = ["*"]
+# if DEBUG:
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -143,8 +143,8 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "frontend/build/static"]
 
 
-if DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = True
+#if DEBUG:
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
