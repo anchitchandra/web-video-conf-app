@@ -10,7 +10,7 @@ class VideoConsumer(AsyncWebsocketConsumer):
     USERS_CONNECTED = []
 
     async def connect(self):
-
+        print("connect", "1"*100)
         # When user connects user is added to the respective room name
         self.room_name = self.scope["url_route"]["kwargs"]["room_name"]
         self.room_group_name = "room_%s" % self.room_name
@@ -18,7 +18,7 @@ class VideoConsumer(AsyncWebsocketConsumer):
         await self.accept()
 
     async def disconnect(self, close_code):
-
+        print("disconnect", "1"*100)
         # Firing signals to other user about user who just disconneted
         await self.channel_layer.group_send(
             self.room_group_name,
@@ -37,7 +37,7 @@ class VideoConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
         data = json.loads(text_data)
-
+        print("receive", "1"*100)
         # Checks user is valide user or not and added to USER_CONNECTED
         if data["type"] == "new_user_joined":
 

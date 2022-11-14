@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG:
-    env_path = Path('.') / 'group_call/.env'
-    load_dotenv(dotenv_path=env_path)
+# if DEBUG:
+#     env_path = Path('.') / 'group_call/.env'
+#     load_dotenv(dotenv_path=env_path)
     
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = "gggg6666655444322"
 
 
 
