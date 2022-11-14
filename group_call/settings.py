@@ -173,11 +173,16 @@ AUTH_USER_MODEL = "api.User"
 ASGI_APPLICATION = "group_call.asgi.application"
 
 # Assigning in memory channel layer
-if DEBUG:
-    channel_layer =  {"BACKEND": "channels.layers.InMemoryChannelLayer"}
-else:
-    channel_layer = {}
-CHANNEL_LAYERS = {"default": channel_layer}
+# if DEBUG:
+#     channel_layer =  {"BACKEND": "channels.layers.InMemoryChannelLayer"}
+# else:
+#     channel_layer = {}
+# CHANNEL_LAYERS = {"default": channel_layer}
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 import django_on_heroku
 
