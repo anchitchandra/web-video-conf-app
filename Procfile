@@ -1,0 +1,1 @@
+web: gunicorn group_call.wsgi
