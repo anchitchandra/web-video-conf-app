@@ -15,7 +15,6 @@ DEBUG = True
 # if DEBUG:
 #     env_path = Path('.') / 'group_call/.env'
 #     load_dotenv(dotenv_path=env_path)
-
 SECRET_KEY = "gggg6666655444322"
 
 
@@ -127,6 +126,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# STATIC_URL = "/static/"
+# Static asset configuration
 STATIC_URL = "/static/"
 
 # ADDED CUSTOM CONFIGURATION
@@ -158,8 +159,17 @@ AUTH_USER_MODEL = "api.User"
 ASGI_APPLICATION = "group_call.asgi.application"
 
 # Assigning in memory channel layer
-if DEBUG:
-    channel_layer =  {"BACKEND": "channels.layers.InMemoryChannelLayer"}
-else:
-    channel_layer = {}
-CHANNEL_LAYERS = {"default": channel_layer}
+# if DEBUG:
+#     channel_layer =  {"BACKEND": "channels.layers.InMemoryChannelLayer"}
+# else:
+#     channel_layer = {}
+# CHANNEL_LAYERS = {"default": channel_layer}
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
+import django_on_heroku
+
+django_on_heroku.settings(locals())

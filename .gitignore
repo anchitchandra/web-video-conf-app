@@ -34,7 +34,6 @@ yarn-error.log*
 *.log
 *.pot
 *.pyc
-__pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -176,4 +175,3 @@ dmypy.json
 
 # profiling data
 .prof
-
